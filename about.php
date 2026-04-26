@@ -335,7 +335,7 @@ menu_item :main :Rescan Books :nickel_misc :rescan_books_full</div>
             <a href="https://github.com/marisabelmunoz/calibre-kobo-bridge" target="_blank" rel="noopener">GitHub Issues</a>.
         </p>
         <p>
-            📧 Email: <b>web [AT] marisabel DOT [nl]</b>
+            📧 Email: <b>web [AT] marisabel [DOT] nl</b>
         </p>
         <p class="field-hint">
             When reporting issues, please include:<br>
