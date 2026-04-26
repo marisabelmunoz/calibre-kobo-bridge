@@ -122,4 +122,8 @@ Check the Kobo sync log:
 cat /mnt/onboard/kobo_sync.log
 ```
 
+## To Do
+
+- [ ] Better searching function for AND and OR queries.
+
 
