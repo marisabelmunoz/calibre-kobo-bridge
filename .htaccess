@@ -1,0 +1,37 @@
+# Deny access to sensitive directories
+<IfModule mod_authz_core.c>
+    # Use mod_rewrite for directory matching
+    RewriteEngine On
+    RewriteRule ^(data|src)(/|$) - [F,L]
+</IfModule>
+
+# Deny access to composer files and bootstrap
+<IfModule mod_authz_core.c>
+    <Files "composer.json">
+        Require all denied
+    </Files>
+    <Files "composer.lock">
+        Require all denied
+    </Files>
+    <Files "bootstrap.php">
+        Require all denied
+    </Files>
+</IfModule>
+
+# Hide directory listings
+Options -Indexes
+
+# Prevent access to hidden files (files starting with dot)
+<IfModule mod_authz_core.c>
+    <FilesMatch "^\.">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
+# PHP settings (adjust if needed)
+<IfModule mod_php.c>
+    php_flag display_errors Off
+    php_value session.cookie_httponly 1
+    php_value session.cookie_samesite Lax
+    php_value session.use_strict_mode 1
+</IfModule>
