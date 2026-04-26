@@ -1,3 +1,14 @@
+Currently tested with: 
+
+- KoboRoot NickleMenu v0.6.0 (2025-12-06)
+- Nextcloud Hub 26 Winter (33.0.2) 
+- Calibre2OPDS 0.0.6
+- Kobo Clara Color 4.45.23684 (2026-04-10)
+- PHP 8.3.30
+
+(These are the version of my apps where it all worked.)
+
+
 # Calibre Kobo Bridge
 
 Sync queued Calibre books from Nextcloud to your Kobo e-reader via NickelMenu
