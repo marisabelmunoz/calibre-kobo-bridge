@@ -8,6 +8,7 @@ Currently tested with:
 
 (These are the version of my apps where it all worked.)
 
+![screenshot](https://github.com/marisabelmunoz/calibre-kobo-bridge/blob/master/Screenshot.png)
 
 # Calibre Kobo Bridge
 
