@@ -66,8 +66,7 @@ if (isset($_GET['download']) && $_GET['download'] === 'script' && Auth::check() 
 
 function generateScript(string $serverUrl, string $apiKey, string $ncUser, string $ncPass): string
 {
-    // Using a Nowdoc (<<<'SHELL') to ensure PHP doesn't try to parse shell variables like $1 or $$.
-    // We use %% for percent signs to escape them for the sprintf function.
+
     $template = <<<'SHELL'
 #!/bin/sh
 # kobo_calibre.sh — Calibre OPDS sync for Kobo
@@ -148,11 +147,7 @@ rm -f "${RAW_RESPONSE}" "/tmp/pending_books_$$.txt"
 log "=== Sync Finished ==="
 SHELL;
 
-    // Apply configuration [cite: 21]
     $output = sprintf($template, $serverUrl, $apiKey, $ncUser, $ncPass);
-
-    // CRITICAL: Remove all \r (Carriage Returns) to ensure Unix format (LF)
-    // This stops the "unexpected word (expecting ")")" error.
     return str_replace("\r", "", $output);
 }
 
@@ -161,6 +156,9 @@ $booksApiUrl = rtrim(Config::get('BOOKS_API_URL'), '/');
 $canDownload = Auth::check() && $configured && $booksApiUrl !== '' && Config::get('API_KEY') !== '';
 $queueCount = \CalibreOpds\Queue::count();
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -58,7 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['save'])) {
             $values[$f] = trim($_POST[$f] ?? '');
         }
 
-        // Keep existing password if blank and already configured
         if ($configured && $values['NC_PASS'] === '') {
             $values['NC_PASS'] = Config::get('NC_PASS');
         }
@@ -130,7 +129,6 @@ $siteTitle = $val('READER_TITLE', 'Calibre Bookshelf');
     </div>
 
     <?php if ($tab === 'settings'): ?>
-        <!-- ── Settings form ─────────────────────────────────────── -->
         <div class="config-card">
 
             <?php foreach ($errors as $e): ?>
@@ -210,7 +208,6 @@ $siteTitle = $val('READER_TITLE', 'Calibre Bookshelf');
         </div>
 
     <?php else: ?>
-        <!-- ── Kobo Queue ─────────────────────────────────────────── -->
         <div class="config-card">
             <div class="config-section-title">Kobo Queue</div>
             <p class="field-hint" style="margin-bottom:1rem">

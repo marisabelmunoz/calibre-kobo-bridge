@@ -82,8 +82,10 @@ $crumbs    = Navigation::breadcrumb($catalog);
 $siteTitle = Config::get('READER_TITLE', 'Calibre Bookshelf');
 $queueCount = Queue::count();
 
-// ── 6. Render ─────────────────────────────────────────────────────────────────
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -315,4 +317,6 @@ document.querySelectorAll('.kobo-send').forEach(btn => {
 });
 </script>
 </body>
+
+<!-- with <3 by marisabel.nl -->
 </html>

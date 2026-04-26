@@ -1,6 +1,5 @@
 <?php
-// Shared login partial — included by index.php and config.php
-// Expects: $siteTitle or Config::get(), $loginError, $return
+
 declare(strict_types=1);
 use CalibreOpds\Config;
 $siteTitle = $siteTitle ?? Config::get('READER_TITLE', 'Calibre Bookshelf');
@@ -36,4 +35,6 @@ $return     = $return ?? 'index.php';
     </div>
 </div>
 </body>
+
+<!-- with <3 by marisabel.nl -->
 </html>

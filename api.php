@@ -10,6 +10,7 @@
  * GET  ?action=remove&index=N           → Remove item by index
  * GET  ?action=clear                    → Clear the entire queue
  * GET  ?action=get_queue                → Alias for list
+ * POST ?action=mark_synced&index=N      → Mark book as downloaded
  */
 
 declare(strict_types=1);

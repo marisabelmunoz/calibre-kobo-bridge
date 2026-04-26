@@ -6,7 +6,6 @@ class Opds
 {
     private const PREFERRED = ['epub', 'kepub', 'mobi', 'azw3', 'pdf'];
 
-    // ── Fetching ──────────────────────────────────────────────────────────────
 
     public static function fetch(string $url): string|false
     {
@@ -29,7 +28,6 @@ class Opds
         return ($err || $code >= 400) ? false : $body;
     }
 
-    // ── Parsing ───────────────────────────────────────────────────────────────
 
     public static function parse(string $xml): array
     {
@@ -92,7 +90,6 @@ class Opds
         return ['title' => $title, 'entries' => $entries, 'nav' => $nav];
     }
 
-    // ── Search ────────────────────────────────────────────────────────────────
 
     public static function searchUrl(string $query): string
     {
@@ -159,7 +156,6 @@ class Opds
         return $tmpl;
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
 
     public static function preferredLink(array $links): ?array
     {
@@ -192,7 +188,6 @@ class Opds
         return $ext ?: 'bin';
     }
 
-    // ── Action handlers ───────────────────────────────────────────────────────
 
     public static function handleAction(string $action): void
     {
@@ -317,11 +312,7 @@ class Opds
     exit;
 }
 
-    /**
-     * add_link — called by Kobo clients or external scripts to register a book.
-     * Stores entries in data/queue.json. External scripts can consume this queue
-     * to push books to a Kobo device (e.g. via send-to-kobo, Calibre wireless, etc.)
-     */
+
     private static function actionAddLink(): void
     {
         header('Content-Type: application/json');
